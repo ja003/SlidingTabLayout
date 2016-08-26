@@ -1,0 +1,4 @@
+10 Sliding Tab Interface
+
+- 10) https://www.youtube.com/watch?v=0Rr0ZCvX_Zs
+- created SlidingTabStrip script

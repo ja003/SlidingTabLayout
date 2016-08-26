@@ -1,0 +1,4 @@
+11 Sliding Tab Layout
+
+- 11) https://www.youtube.com/watch?v=M8OURJQOcoM
+- implemented sliding of tabs

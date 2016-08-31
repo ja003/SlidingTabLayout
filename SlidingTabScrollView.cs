@@ -89,6 +89,7 @@ namespace SlidingTabLayout
                     value.PageSelected += value_PageSelected;
                     value.PageScrollStateChanged += value_PageScrollStateChanged;
                     value.PageScrolled += value_PageScrolled;
+                    PopulateTabStrip();
                 }
             }
         }
@@ -149,7 +150,8 @@ namespace SlidingTabLayout
             for(int i = 0; i < adapter.Count; i++)
             {
                 TextView tabView = CreateDefaultTabView(Context);
-                tabView.Text = i.ToString();
+                //tabView.Text = i.ToString();
+                tabView.Text = ((SlidingTabFragment.SamplePagerAdapter)adapter).GetHeaderTitle(i);
                 tabView.SetTextColor(Android.Graphics.Color.Black);
                 tabView.Tag = i;
                 tabView.Click += tabView_Click;
@@ -175,7 +177,7 @@ namespace SlidingTabLayout
             if(Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Honeycomb)
             {
                 TypedValue outValue = new TypedValue();
-                Context.Theme.ResolveAttribute(Android.Resource.Attribute.SelectableItemBackground, out, false);
+                Context.Theme.ResolveAttribute(Android.Resource.Attribute.SelectableItemBackground, outValue, false);
                 textView.SetBackgroundResource(outValue.ResourceId);
             }
 

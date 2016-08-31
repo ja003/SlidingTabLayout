@@ -20,11 +20,16 @@ namespace SlidingTabLayout
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            SlidingTabFragment fragment = new SlidingTabFragment();
+            transaction.Replace(Resource.Id.sample_content_fragment, fragment);
+            transaction.Commit();
+        }
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.actionbar_main, menu);
+            return base.OnCreateOptionsMenu(menu);
         }
     }
 }

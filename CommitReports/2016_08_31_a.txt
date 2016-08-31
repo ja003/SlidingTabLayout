@@ -1,0 +1,4 @@
+12 Completing Sliding Tab Layout
+
+- 12) https://www.youtube.com/watch?v=HHGsnOjzkWc
+- making it all work
